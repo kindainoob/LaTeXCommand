@@ -23,6 +23,6 @@ template = """
 
 """%locals()
 
-# ファイル作成，書き込み　
+# ファイル作成と書き込み　
 f = open(filename,'w')
 f.write(template)
