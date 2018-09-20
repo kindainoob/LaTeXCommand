@@ -6,7 +6,7 @@
 2. tex_maker.py
   いくつかの質問に答えたのちにその答えに合わせたtexファイルを作成するプログラム
 
-- 環境
+## 環境
  - macOS High Sierra
  - python 3.6.5
  - platex
