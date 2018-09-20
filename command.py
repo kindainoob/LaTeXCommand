@@ -1,18 +1,15 @@
-# coding:utf-8
+#coding:utf-8
 import subprocess
 import sys
 args = sys.argv
 
 file = args[1]
-cmd = 'pwd'
-wd = (subprocess.Popen(cmd, stdout=subprocess.PIPE,
-                           shell=True).communicate()[0]).decode('utf-8')
-file = args[1]
-platex = 'platex ' + file
-dvipdfmx = 'dvipdfmx ' + file
-clean = 'rm *.log *.aux *.dvi'
 
-cmd = 'cp ' + wd + file + ' ./'
+cut_file = file.split('.')
+platex = 'platex ' + cut_file[0] + '.tex'
+dvipdfmx = 'dvipdfmx ' + cut_file[0] + '.dvi'
+clean = 'rm '+ cut_file[0] +'.dvi '+ cut_file[0] +'.log '+ cut_file[0] +'.aux'
+
 subprocess.call(platex.split())
 subprocess.call(platex.split())
 subprocess.call(dvipdfmx.split())
